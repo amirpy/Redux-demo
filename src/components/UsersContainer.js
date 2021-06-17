@@ -13,31 +13,47 @@ function UsersContainer({ userData, fetchUsers }) {
   let users = userData.users;
 
   return (
-    <div>
+    <div style={{
+      border: '1px solid black',
+      margin: 5,
+      backgroundColor: '	#4682B4',
+    }}>
       {loading && <div>Loader</div>}
       {!loading && <div>{error && <div>Error hai bhai</div>}</div>}
       {!loading && !error && (
         <div>
-          <h2>API LIST</h2>
+          <h2 style={{
+                        textAlign: 'center',
+                        border: '1px solid orange',
+                        margin: 5,
+                        borderRadius: 17,
+                        color:'white',
+                        filter:' drop-shadow(7px -7px 5px rgba(0,0,0,0.5))',
+                        borderTop: '20px solid yellow',
+                        borderLeft: '20px solid',
+                        borderRight: '20px solid',
+                   
+                      }}>API LIST</h2>
           <div>
             <div className="row">
               {users.map((element, index) => {
                 return (
-                  <div className="col-md-3">
+                  <div className="col-md-4 " >
                     <div
                       style={{
                         textAlign: 'left',
                         border: '1px solid orange',
                         margin: 5,
                         borderRadius: 7,
-                        backgroundColor: '#bdbdbd',
+                        backgroundColor: 'skyblue',
+                        boxSizing: 'border-box',
                       }}>
                       <ul>
-                        <li style={{ paddingTop: 5, paddingBottom: 5, color: 'green', fontWeight: 700 }}>
+                        <li style={{ paddingTop: 5, paddingBottom: 5, color: 'snow', fontWeight: 700,  }}>
                           {element.name}
                         </li>
-                        <li style={{ paddingTop: 5, paddingBottom: 5 }}>{element.email}</li>
-                        <li style={{ paddingTop: 5, paddingBottom: 5 }}>{element.phone}</li>
+                        <li style={{ paddingTop: 5, paddingBottom: 5, color: 'white' }}>{element.email}</li>
+                        <li style={{ paddingTop: 5, paddingBottom: 5, color: 'white' }}>{element.phone}</li>
                       </ul>
                     </div>
                   </div>
